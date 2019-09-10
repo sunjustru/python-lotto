@@ -9,6 +9,7 @@ class Card:
         self.rows = 3
 
     # Создаём карточку
+    @property
     def set_card(self):
         matrix = np.array(random.sample(self.__nums, self.cols * self.rows)).reshape(self.rows, self.cols)
         matrix = np.array(([sorted(itm) for itm in matrix]), int)
@@ -35,10 +36,11 @@ class Player(Card):
             self.player_type = 0
 
         # Получаем карточку игрока
-        self.card = self.get_card()
+        self.card = self.get_card
 
+    @property
     def get_card(self):
-        return self.set_card()
+        return self.set_card
 
 # Сама игра
 class Lotto:
