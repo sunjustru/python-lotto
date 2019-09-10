@@ -52,6 +52,7 @@ class Lotto:
         self.players.append(other)
 
     # Возвращаем случайное число (бочёнок)
+    @property
     def get_num(self):
         # Кол-во ходов
         self.count_steps = len(self.__nums)
@@ -116,6 +117,7 @@ class Lotto:
             print('Игроков для игры нет')
             return False
 
+    @property
     def __render_card(self):
         text = ''
         for i in self.players:
@@ -140,11 +142,12 @@ class Lotto:
             text = text + '######\n'
         print(text)
 
+    @property
     def play_game(self):
-        self.get_num() # получаем случайное число self.num и удаляем его из списка self.__nums
+        self.get_num # получаем случайное число self.num и удаляем его из списка self.__nums
 
         # Выводим карточки игроков с применением декорирования
-        self.__render_card()
+        self.__render_card
 
         print(f'Кол-во ходов: {self.count_steps}')
 
@@ -184,5 +187,5 @@ while True:
     break
 
 while True:
-    if cls.play_game() == False:
+    if cls.play_game == False:
         break
